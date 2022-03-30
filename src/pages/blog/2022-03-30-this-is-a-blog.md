@@ -6,4 +6,6 @@ description: "I'm all, like, making a blog and that. "
 featuredpost: true
 featuredimage: /img/fp-playing.png
 ---
+![Lord Fluffypants](/img/fp-playing.png)
+
 Yeah. It's Lord Fluffypants himself.
