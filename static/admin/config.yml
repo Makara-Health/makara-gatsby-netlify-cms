@@ -123,6 +123,21 @@ collections:
                   },
                 ],
             }
+          - {
+              label: "Manual PDF",
+              name: "manual_pdf",
+              widget: "file",
+              default: "/uploads/general-manual.pdf",
+              media_library:
+                [
+                  {
+                    config:
+                      [
+                        { multiple: true, choose_url: true }
+                      ]
+                  }
+                ]
+            }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
