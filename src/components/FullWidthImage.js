@@ -14,7 +14,7 @@ export default function FullWidthImage(props) {
   return (
     <React.Fragment>
       <div
-        className="margin-top-0"
+        className="mt-0"
         style={{
           display: "grid",
           alignItems: "center",
@@ -69,7 +69,7 @@ export default function FullWidthImage(props) {
             {/* Any content here will be centered in the component */}
             {title && (
               <h1
-                className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                className="text-3xl"
                 style={{
                   boxShadow:
                     "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
@@ -84,7 +84,7 @@ export default function FullWidthImage(props) {
             )}
             {subheading && (
               <h3
-                className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+                className="text-xl"
                 style={{
                   boxShadow:
                     "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
