@@ -23,15 +23,15 @@ export const IndexPageTemplate = ({
   return (
     <div>
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
-      <h1 className="title">{mainpitch.title}</h1>
-      <h3 className="subtitle">{mainpitch.description}</h3>
-      <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
+      <h1 className="">{mainpitch.title}</h1>
+      <h3 className="">{mainpitch.description}</h3>
+      <h3 className="">{heading}</h3>
       <p>{description}</p>
       <Features gridItems={intro.blurbs} />
-      <Link className="btn" to="/products">See all products</Link>
-      <h3 className="has-text-weight-semibold is-size-2">Latest stories</h3>
+      <Link className="" to="/products">See all products</Link>
+      <h3 className="">Latest stories</h3>
       <BlogRoll />
-      <Link className="btn" to="/blog">Read more</Link>
+      <Link className="" to="/blog">Read more</Link>
     </div>
   );
 };
