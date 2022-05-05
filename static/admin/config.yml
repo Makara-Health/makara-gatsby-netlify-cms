@@ -54,7 +54,7 @@ collections:
         widget: "hidden",
         default: "team-member",
       }
-      - { label: "Full name", name: "fullName", widget: "string" }
+      - { label: "Full name", name: "title", widget: "string" }
       - { label: "Job title", name: "jobTitle", widget: "string" }
       - { label: "Member image", name: "memberImage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }

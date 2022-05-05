@@ -31,7 +31,7 @@ class TeamRollTemplate extends React.Component {
                                     </div>
                                 ) : null}
                                 <p className="">
-                                    <Link className="" to={teamMember.fields.slug}>{teamMember.frontmatter.fullName}</Link>
+                                    <Link className="" to={teamMember.fields.slug}>{teamMember.frontmatter.title}</Link>
                                 </p>
                             </header>
                             <p>
@@ -74,7 +74,7 @@ export default function TeamRoll() {
                   slug
                 }
                 frontmatter {
-                  fullName
+                  title
                   templateKey
                   memberImage {
                     childImageSharp {

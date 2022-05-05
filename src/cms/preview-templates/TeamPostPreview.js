@@ -9,7 +9,7 @@ const TeamPostPreview = ({ entry, widgetFor }) => {
             content={widgetFor('body')}
             jobTitle={entry.getIn(['data', 'jobTitle'])}
             tags={tags && tags.toJS()}
-            fullName={entry.getIn(['data', 'fullName'])}
+            fullName={entry.getIn(['data', 'title'])}
         />
     )
 }

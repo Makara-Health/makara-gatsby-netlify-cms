@@ -12,7 +12,7 @@ export const TeamPostTemplate = ({
                                      contentComponent,
                                      jobTitle,
                                      tags,
-                                     fullName,
+                                     title,
                                      helmet,
                                  }) => {
     const PostContent = contentComponent || Content;
@@ -21,7 +21,7 @@ export const TeamPostTemplate = ({
         <section className="">
             {helmet || ""}
             <div className="">
-                <h1 className="">{fullName}</h1>
+                <h1 className="">{title}</h1>
                 <p>{jobTitle}</p>
                 <PostContent content={content}/>
                 {tags && tags.length ? (
@@ -60,7 +60,7 @@ const TeamPost = ({data}) => {
                 description={teamMember.frontmatter.jobTitle}
                 helmet={
                     <Helmet titleTemplate="%s | Blog">
-                        <title>{`${teamMember.frontmatter.fullName}`}</title>
+                        <title>{`${teamMember.frontmatter.title}`}</title>
                         <meta
                             name="jobTitle"
                             content={`${teamMember.frontmatter.jobTitle}`}
@@ -68,7 +68,7 @@ const TeamPost = ({data}) => {
                     </Helmet>
                 }
                 tags={teamMember.frontmatter.tags}
-                title={teamMember.frontmatter.fullName}
+                title={teamMember.frontmatter.title}
             />
         </Layout>
     );
@@ -88,7 +88,7 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        fullName
+        title
         jobTitle
         tags
       }
