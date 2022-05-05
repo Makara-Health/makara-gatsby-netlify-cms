@@ -1,7 +1,6 @@
 import React from "react";
 import {Link} from "gatsby";
-import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
+import logo from "../img/logo-makara.svg";
 
 const Navbar = class extends React.Component {
     constructor(props) {
@@ -34,11 +33,11 @@ const Navbar = class extends React.Component {
 
     render() {
         return (
-            <nav className="navbar bg-blue-900" role="navigation" aria-label="main-navigation">
-                <div className="container">
+            <nav className="bg-blue px-2 sm:px-4 py-5" role="navigation" aria-label="main-navigation">
+                <div className="container max-w-6xl flex flex-wrap justify-between items-center mx-auto">
                     <div className="navbar-brand">
                         <Link to="/" className="navbar-item" title="Logo">
-                            <img src={logo} alt="Kaldi" style={{width: "88px"}}/>
+                            <img src={logo} alt="Makara" style={{width: "155px"}}/>
                         </Link>
                         {/* Hamburger menu */}
                         <div
@@ -54,32 +53,26 @@ const Navbar = class extends React.Component {
                             <span/>
                         </div>
                     </div>
-                    <div id="navMenu" className={`navbar-menu ${this.state.navBarActiveClass}`}>
-                        <div className="navbar-start has-text-centered">
-                            <Link className="navbar-item" to="/about">
-                                About
+                    <div id="navMenu" className={`md:ml-auto flex flex-wrap items-center text-base justify-center ${this.state.navBarActiveClass}`}>
+                        <div className="navbar-start">
+                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/about">
+                                About us
                             </Link>
-                            <Link className="navbar-item" to="/products">
-                                Products
+                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/products">
+                                Our team
                             </Link>
-                            <Link className="navbar-item" to="/blog">
-                                Blog
+                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/products">
+                                Our work
                             </Link>
-                            <Link className="navbar-item" to="/contact">
+                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/blog">
+                                Our blog
+                            </Link>
+                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/contact/examples">
+                                Careers
+                            </Link>
+                            <Link className="navbar-item text-white hover:text-turquoise" to="/contact">
                                 Contact
                             </Link>
-                            <Link className="navbar-item" to="/contact/examples">
-                                Form Examples
-                            </Link>
-                        </div>
-                        <div className="navbar-end has-text-centered">
-                            <a className="navbar-item"
-                               href="https://github.com/netlify-templates/gatsby-starter-netlify-cms" target="_blank"
-                               rel="noopener noreferrer">
-                                <span className="icon">
-                                  <img src={github} alt="Github"/>
-                                </span>
-                            </a>
                         </div>
                     </div>
                 </div>

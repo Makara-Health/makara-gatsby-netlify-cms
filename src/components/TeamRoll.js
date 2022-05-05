@@ -3,44 +3,42 @@ import PropTypes from 'prop-types'
 import {Link, graphql, StaticQuery} from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-class BlogRollTemplate extends React.Component {
+class TeamRollTemplate extends React.Component {
     render() {
         const {data} = this.props
-        const {edges: posts} = data.allMarkdownRemark
+        const {edges: teamMembers} = data.allMarkdownRemark
 
         return (
             <div className="">
-                {posts && posts.map(({node: post}) => (
-                    <div className="" key={post.id}>
-                        <article className={` ${post.frontmatter.featuredPost ? 'is-featured' : ''}`}>
+                {teamMembers && teamMembers.map(({node: teamMember}) => (
+                    <div className="" key={teamMember.id}>
+                        <article className="">
                             <header>
-                                {post.frontmatter.featuredImage ? (
+                                {teamMember.frontmatter.memberImage ? (
                                     <div className="">
                                         <PreviewCompatibleImage
                                             imageInfo={{
-                                                image: post.frontmatter.featuredImage,
-                                                alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                                                image: teamMember.frontmatter.memberImage,
+                                                alt: `featured image thumbnail for teamMember ${teamMember.frontmatter.title}`,
                                                 width:
-                                                post.frontmatter.featuredImage.childImageSharp
+                                                teamMember.frontmatter.memberImage.childImageSharp
                                                     .gatsbyImageData.width,
                                                 height:
-                                                post.frontmatter.featuredImage.childImageSharp
+                                                teamMember.frontmatter.memberImage.childImageSharp
                                                     .gatsbyImageData.height,
                                             }}
                                         />
                                     </div>
                                 ) : null}
                                 <p className="">
-                                    <Link className="" to={post.fields.slug}>{post.frontmatter.title}</Link>
-                                    <span> &bull; </span>
-                                    <span className="">{post.frontmatter.date}</span>
+                                    <Link className="" to={teamMember.fields.slug}>{teamMember.frontmatter.fullName}</Link>
                                 </p>
                             </header>
                             <p>
-                                {post.excerpt}
+                                {teamMember.excerpt}
                                 <br/>
                                 <br/>
-                                <Link className="" to={post.fields.slug}>Keep Reading →</Link>
+                                <Link className="" to={teamMember.fields.slug}>Keep Reading →</Link>
                             </p>
                         </article>
                     </div>
@@ -50,7 +48,7 @@ class BlogRollTemplate extends React.Component {
     }
 }
 
-BlogRoll.propTypes = {
+TeamRoll.propTypes = {
     data: PropTypes.shape({
         allMarkdownRemark: PropTypes.shape({
             edges: PropTypes.array,
@@ -59,14 +57,14 @@ BlogRoll.propTypes = {
 }
 
 
-export default function BlogRoll() {
+export default function TeamRoll() {
     return (
         <StaticQuery
             query={graphql`
-        query BlogRollQuery {
+        query TeamRollQuery {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+            filter: { frontmatter: { templateKey: { eq: "team-member" } } }
           ) {
             edges {
               node {
@@ -76,11 +74,9 @@ export default function BlogRoll() {
                   slug
                 }
                 frontmatter {
-                  title
+                  fullName
                   templateKey
-                  date(formatString: "MMMM DD, YYYY")
-                  featuredPost
-                  featuredImage {
+                  memberImage {
                     childImageSharp {
                       gatsbyImageData(
                         width: 120
@@ -95,7 +91,7 @@ export default function BlogRoll() {
             }
           }
         }
-      `} render = { (data, count) => <BlogRollTemplate data={data} count={count}/> }
+      `} render = { (data, count) => <TeamRollTemplate data={data} count={count}/> }
         />
     );
 }

@@ -7,7 +7,10 @@ module.exports = {
   theme: {
     screens: {},
     colors: {
-      blue: '#1fb6ff',
+      white: '#fff',
+      black: '#000',
+      blue: '#1a1f4c',
+      turquoise: '#26c6b4',
       grey: {
         100: '#f7fafc',
         900: '#1a202c',

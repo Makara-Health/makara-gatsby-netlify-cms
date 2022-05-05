@@ -5,6 +5,7 @@ import {getImage} from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
+import TeamRoll from "../components/TeamRoll";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 
@@ -24,6 +25,7 @@ export const IndexPageTemplate = ({
     return (
         <div>
             <FullWidthImage img={heroImage} title={title} subheading={subheading}/>
+            <TeamRoll/>
             <h1 className="">{mainpitch.title}</h1>
             <h3 className="">{mainpitch.description}</h3>
             <h3 className="">{heading}</h3>
