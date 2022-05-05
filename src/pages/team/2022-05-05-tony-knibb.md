@@ -1,5 +1,5 @@
 ---
-templateKey: 'team-post'
+templateKey: 'team-member'
 fullName: 'Tony Knibb'
 jobTitle: 'Director of Digital Development'
 memberImage: /img/flavor_wheel.jpg

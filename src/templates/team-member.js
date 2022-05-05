@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 import Content, {HTMLContent} from "../components/Content";
 
 // eslint-disable-next-line
-export const TeamPostTemplate = ({
+export const TeamMemberTemplate = ({
                                      content,
                                      contentComponent,
                                      jobTitle,
@@ -41,7 +41,7 @@ export const TeamPostTemplate = ({
     );
 };
 
-TeamPostTemplate.propTypes = {
+TeamMemberTemplate.propTypes = {
     content: PropTypes.node.isRequired,
     contentComponent: PropTypes.func,
     description: PropTypes.string,
@@ -49,12 +49,12 @@ TeamPostTemplate.propTypes = {
     helmet: PropTypes.object,
 };
 
-const TeamPost = ({data}) => {
+const TeamMember = ({data}) => {
     const {markdownRemark: teamMember} = data;
 
     return (
         <Layout>
-            <TeamPostTemplate
+            <TeamMemberTemplate
                 content={teamMember.html}
                 contentComponent={HTMLContent}
                 description={teamMember.frontmatter.jobTitle}
@@ -74,13 +74,13 @@ const TeamPost = ({data}) => {
     );
 };
 
-TeamPost.propTypes = {
+TeamMember.propTypes = {
     data: PropTypes.shape({
         markdownRemark: PropTypes.object,
     }),
 };
 
-export default TeamPost;
+export default TeamMember;
 
 export const pageQuery = graphql`
   query TeamPostByID($id: String!) {

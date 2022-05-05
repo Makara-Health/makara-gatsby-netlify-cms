@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { TeamPostTemplate } from '../../templates/team-post'
+import { TeamMemberTemplate } from '../../templates/team-member'
 
-const TeamPostPreview = ({ entry, widgetFor }) => {
+const TeamMemberPreview = ({ entry, widgetFor }) => {
     const tags = entry.getIn(['data', 'tags'])
     return (
-        <TeamPostTemplate
+        <TeamMemberTemplate
             content={widgetFor('body')}
             jobTitle={entry.getIn(['data', 'jobTitle'])}
             tags={tags && tags.toJS()}
@@ -14,11 +14,11 @@ const TeamPostPreview = ({ entry, widgetFor }) => {
     )
 }
 
-TeamPostPreview.propTypes = {
+TeamMemberPreview.propTypes = {
     entry: PropTypes.shape({
         getIn: PropTypes.func,
     }),
     widgetFor: PropTypes.func,
 }
 
-export default TeamPostPreview
+export default TeamMemberPreview
