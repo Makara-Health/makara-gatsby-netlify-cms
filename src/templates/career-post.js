@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 import Content, {HTMLContent} from "../components/Content";
 
 // eslint-disable-next-line
-export const BlogPostTemplate = ({
+export const CareersPostTemplate = ({
                                      content,
                                      contentComponent,
                                      description,
@@ -45,7 +45,7 @@ export const BlogPostTemplate = ({
     );
 };
 
-BlogPostTemplate.propTypes = {
+CareersPostTemplate.propTypes = {
     content: PropTypes.node.isRequired,
     contentComponent: PropTypes.func,
     description: PropTypes.string,
@@ -58,12 +58,12 @@ const BlogPost = ({data}) => {
 
     return (
         <Layout>
-            <BlogPostTemplate
+            <CareersPostTemplate
                 content={post.html}
                 contentComponent={HTMLContent}
                 description={post.frontmatter.description}
                 helmet={
-                    <Helmet titleTemplate="%s | Blog">
+                    <Helmet titleTemplate="%s | Careers">
                         <title>{`${post.frontmatter.title}`}</title>
                         <meta
                             name="description"
@@ -87,7 +87,7 @@ BlogPost.propTypes = {
 export default BlogPost;
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query CareerPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html

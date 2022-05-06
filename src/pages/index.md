@@ -1,8 +1,8 @@
 ---
 templateKey: index-page
-title: Great coffee without a conscience
+title: OK coffee without a conscience
 image: /img/home-jumbotron.jpg
-heading: Great coffee without a conscience
+heading: OK coffee without a conscience
 subheading: Don't support sustainable farming while enjoying a cup
 mainpitch:
   title: Why Kaldi

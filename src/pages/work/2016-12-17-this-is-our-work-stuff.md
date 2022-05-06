@@ -1,6 +1,6 @@
 ---
-templateKey: blog-post
-title: Making sense of the SCAA’s new Flavor Wheel
+templateKey: work-post
+title: This is our work stuff
 date: 2016-12-17T15:04:10.000Z
 featuredPost: false
 featuredImage: /img/flavor_wheel.jpg
@@ -8,6 +8,7 @@ description: The Coffee Taster’s Flavor Wheel, the official resource used by c
 tags:
   - flavor
   - tasting
+  - work
 ---
 ![flavor wheel](/img/flavor_wheel.jpg)
 

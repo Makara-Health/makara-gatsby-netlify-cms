@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Layout from "../../components/Layout";
-import BlogRoll from "../../components/BlogRoll";
+import WorkRoll from "../../components/WorkRoll";
 
 export default class BlogIndexPage extends React.Component {
   render() {
@@ -10,11 +10,11 @@ export default class BlogIndexPage extends React.Component {
           <section className="px-2 sm:px-4">
               <div className="container max-w-6xl mx-auto">
 
-                  <div className="p-10" style={{ backgroundImage: `url('/img/blog-index.jpg')` }}>
-                      <h1 className="">Latest Stories</h1>
+                  <div className="p-10" style={{ backgroundImage: `url('/img/work-index.jpg')` }}>
+                      <h1 className="">Latest Work</h1>
                   </div>
 
-                  <BlogRoll />
+                  <WorkRoll />
 
               </div>
           </section>

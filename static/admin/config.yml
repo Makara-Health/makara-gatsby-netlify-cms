@@ -27,11 +27,90 @@ collections:
           widget: "hidden",
           default: "blog-post",
         }
+      - {
+          label: "Blog style",
+          name: "style",
+          widget: "select",
+          options: ["Standard", "Fancy"],
+          default: ["Standard"]
+        }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Featured Post", name: "featuredPost", widget: "boolean" }
+      - { label: "Featured Image", name: "featuredImage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+
+  - name: "team"
+    label: "Team"
+    folder: "src/pages/team"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+        label: "Template Key",
+        name: "templateKey",
+        widget: "hidden",
+        default: "team-member",
+      }
+      - { label: "Full name", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Job title", name: "jobTitle", widget: "string" }
+      - { label: "Member image", name: "memberImage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+
+  - name: "careers"
+    label: "Careers"
+    folder: "src/pages/careers"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+        label: "Template Key",
+        name: "templateKey",
+        widget: "hidden",
+        default: "career-post",
+      }
+      - {
+        label: "Career style",
+        name: "style",
+        widget: "select",
+        options: ["Standard", "Fancy"],
+        default: ["Standard"]
+      }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "jobImage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+
+  - name: "work"
+    label: "Work"
+    folder: "src/pages/work"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+        label: "Template Key",
+        name: "templateKey",
+        widget: "hidden",
+        default: "work-post",
+      }
+      - {
+        label: "Work style",
+        name: "style",
+        widget: "select",
+        options: ["Standard", "Fancy"],
+        default: ["Standard"]
+      }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Post", name: "featuredPost", widget: "boolean" }
+      - { label: "Featured Image", name: "featuredImage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
 

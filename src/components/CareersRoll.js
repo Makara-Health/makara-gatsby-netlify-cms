@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {Link, graphql, StaticQuery} from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
-class BlogRollTemplate extends React.Component {
+class CareersRollTemplate extends React.Component {
     render() {
         const {data} = this.props
         const {edges: posts} = data.allMarkdownRemark
@@ -12,19 +12,19 @@ class BlogRollTemplate extends React.Component {
             <div className="">
                 {posts && posts.map(({node: post}) => (
                     <div className="" key={post.id}>
-                        <article className={` ${post.frontmatter.featuredPost ? 'is-featured' : ''}`}>
+                        <article className="">
                             <header>
-                                {post.frontmatter.featuredImage ? (
+                                {post.frontmatter.jobImage ? (
                                     <div className="">
                                         <PreviewCompatibleImage
                                             imageInfo={{
-                                                image: post.frontmatter.featuredImage,
+                                                image: post.frontmatter.jobImage,
                                                 alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                                                 width:
-                                                post.frontmatter.featuredImage.childImageSharp
+                                                post.frontmatter.jobImage.childImageSharp
                                                     .gatsbyImageData.width,
                                                 height:
-                                                post.frontmatter.featuredImage.childImageSharp
+                                                post.frontmatter.jobImage.childImageSharp
                                                     .gatsbyImageData.height,
                                             }}
                                         />
@@ -50,7 +50,7 @@ class BlogRollTemplate extends React.Component {
     }
 }
 
-BlogRoll.propTypes = {
+CareersRoll.propTypes = {
     data: PropTypes.shape({
         allMarkdownRemark: PropTypes.shape({
             edges: PropTypes.array,
@@ -59,14 +59,14 @@ BlogRoll.propTypes = {
 }
 
 
-export default function BlogRoll() {
+export default function CareersRoll() {
     return (
         <StaticQuery
             query={graphql`
-        query BlogRollQuery {
+        query CareersRollQuery {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+            filter: { frontmatter: { templateKey: { eq: "career-post" } } }
           ) {
             edges {
               node {
@@ -77,10 +77,11 @@ export default function BlogRoll() {
                 }
                 frontmatter {
                   title
+                  description
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
                   featuredPost
-                  featuredImage {
+                  jobImage {
                     childImageSharp {
                       gatsbyImageData(
                         width: 120
@@ -94,7 +95,7 @@ export default function BlogRoll() {
             }
           }
         }
-      `} render = { (data, count) => <BlogRollTemplate data={data} count={count}/> }
+      `} render = { (data, count) => <CareersRollTemplate data={data} count={count}/> }
         />
     );
 }
