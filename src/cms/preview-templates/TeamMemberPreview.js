@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { TeamMemberTemplate } from '../../templates/team-member'
 
-const TeamMemberPreview = ({ entry, widgetFor }) => {
+const TeamMemberPreview = ({ entry, getAsset, widgetFor }) => {
     const tags = entry.getIn(['data', 'tags'])
     return (
         <TeamMemberTemplate
@@ -10,6 +10,7 @@ const TeamMemberPreview = ({ entry, widgetFor }) => {
             jobTitle={entry.getIn(['data', 'jobTitle'])}
             tags={tags && tags.toJS()}
             fullName={entry.getIn(['data', 'title'])}
+            memberImage={getAsset(entry.getIn(['data', 'memberImage']))}
         />
     )
 }
