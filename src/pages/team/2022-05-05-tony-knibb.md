@@ -6,6 +6,7 @@ jobTitle: Director of Digital Development
 memberImage: /img/flavor_wheel.jpg
 tags:
 - digital
+- cats
 ---
 
 It's me.
