@@ -72,6 +72,7 @@ export const TeamMemberTemplate = ({
 TeamMemberTemplate.propTypes = {
     content: PropTypes.node.isRequired,
     contentComponent: PropTypes.func,
+    memberImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     description: PropTypes.string,
     title: PropTypes.string,
     helmet: PropTypes.object,
