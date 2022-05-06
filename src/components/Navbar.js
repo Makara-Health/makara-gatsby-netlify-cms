@@ -58,7 +58,7 @@ const Navbar = class extends React.Component {
                             <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/about">
                                 About us
                             </Link>
-                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/products">
+                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/team">
                                 Our team
                             </Link>
                             <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/products">
@@ -67,10 +67,10 @@ const Navbar = class extends React.Component {
                             <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/blog">
                                 Our blog
                             </Link>
-                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/contact/examples">
+                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/careers">
                                 Careers
                             </Link>
-                            <Link className="navbar-item text-white hover:text-turquoise" to="/contact">
+                            <Link className="navbar-item text-white hover:text-turquoise" to="/contact/examples">
                                 Contact
                             </Link>
                         </div>

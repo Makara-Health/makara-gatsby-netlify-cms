@@ -61,6 +61,32 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
 
+  - name: "careers"
+    label: "Careers"
+    folder: "src/pages/careers"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+        label: "Template Key",
+        name: "templateKey",
+        widget: "hidden",
+        default: "career-post",
+      }
+      - {
+        label: "Career style",
+        name: "style",
+        widget: "select",
+        options: ["Standard", "Fancy"],
+        default: ["Standard"]
+      }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "jobImage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+
   - name: "pages"
     label: "Pages"
     files:
