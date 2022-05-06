@@ -87,6 +87,9 @@ const TeamMember = ({data}) => {
                 content={teamMember.html}
                 contentComponent={HTMLContent}
                 description={teamMember.frontmatter.jobTitle}
+                title={teamMember.frontmatter.title}
+                jobTitle={teamMember.frontmatter.jobTitle}
+                memberImage={teamMember.frontmatter.memberImage}
                 helmet={
                     <Helmet titleTemplate="%s | Blog">
                         <title>{`${teamMember.frontmatter.title}`}</title>
@@ -97,9 +100,6 @@ const TeamMember = ({data}) => {
                     </Helmet>
                 }
                 tags={teamMember.frontmatter.tags}
-                title={teamMember.frontmatter.title}
-                jobTitle={teamMember.frontmatter.jobTitle}
-                memberImage={teamMember.frontmatter.memberImage}
             />
         </Layout>
     );
@@ -122,13 +122,13 @@ export const pageQuery = graphql`
         title
         jobTitle
         memberImage {
-            childImageSharp {
-              gatsbyImageData(
-                width: 120
-                quality: 100
-                layout: CONSTRAINED
-              )
-            }
+          childImageSharp {
+            gatsbyImageData(
+              width: 120
+              quality: 100
+              layout: CONSTRAINED
+            )
+          }
         }
         tags
       }
