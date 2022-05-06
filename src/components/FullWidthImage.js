@@ -50,14 +50,16 @@ export default function FullWidthImage(props) {
           />
         )}
         {(title || subheading) && (
-          <div>
-            {/* Any content here will be centered in the component */}
-            {title && (
-              <h1 className="text-3xl">{title}</h1>
-            )}
-            {subheading && (
-              <h3 className="text-xl">{subheading}</h3>
-            )}
+          <div className="px-2 sm:px-4">
+            <div className="container max-w-6xl mx-auto">
+              {/* Any content here will be centered in the component */}
+              {title && (
+                  <h1 className="text-3xl">{title}</h1>
+              )}
+              {subheading && (
+                  <h3 className="text-xl">{subheading}</h3>
+              )}
+            </div>
           </div>
         )}
       </div>

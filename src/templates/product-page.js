@@ -25,28 +25,33 @@ export const ProductPageTemplate = ({
     const fullWidthImage = getImage(fullImage) || fullImage;
 
     return (
-        <div className="content">
+        <div className="">
             <FullWidthImage img={heroImage} title={title}/>
-            <section className="">
-                <h3 className="">{heading}</h3>
-                <p>{description}</p>
-                <Features gridItems={intro.blurbs}/>
-                <h3 className="">{main.heading}</h3>
-                <p>{main.description}</p>
-                <article className="">
-                    <PreviewCompatibleImage imageInfo={main.image1}/>
-                </article>
-                <article className="">
-                    <PreviewCompatibleImage imageInfo={main.image2}/>
-                </article>
-                <article className="">
-                    <PreviewCompatibleImage imageInfo={main.image3}/>
-                </article>
-                <Testimonials testimonials={testimonials}/>
-                <FullWidthImage img={fullWidthImage} imgPosition={"bottom"}/>
-                <h2 className="has-text-weight-semibold is-size-2">{pricing.heading}</h2>
-                <p className="is-size-5">{pricing.description}</p>
-                <Pricing data={pricing.plans}/>
+
+            <section className="px-2 sm:px-4">
+                <div className="container max-w-6xl mx-auto">
+
+                    <h3 className="">{heading}</h3>
+                    <p>{description}</p>
+                    <Features gridItems={intro.blurbs}/>
+                    <h3 className="">{main.heading}</h3>
+                    <p>{main.description}</p>
+                    <article className="">
+                        <PreviewCompatibleImage imageInfo={main.image1}/>
+                    </article>
+                    <article className="">
+                        <PreviewCompatibleImage imageInfo={main.image2}/>
+                    </article>
+                    <article className="">
+                        <PreviewCompatibleImage imageInfo={main.image3}/>
+                    </article>
+                    <Testimonials testimonials={testimonials}/>
+                    <FullWidthImage img={fullWidthImage} imgPosition={"bottom"}/>
+                    <h2 className="has-text-weight-semibold is-size-2">{pricing.heading}</h2>
+                    <p className="is-size-5">{pricing.description}</p>
+                    <Pricing data={pricing.plans}/>
+
+                </div>
             </section>
         </div>
     );

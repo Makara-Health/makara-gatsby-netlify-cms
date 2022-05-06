@@ -5,38 +5,66 @@ import {Helmet} from "react-helmet";
 import {graphql, Link} from "gatsby";
 import Layout from "../components/Layout";
 import Content, {HTMLContent} from "../components/Content";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 // eslint-disable-next-line
 export const TeamMemberTemplate = ({
                                      content,
                                      contentComponent,
-                                     jobTitle,
-                                     tags,
                                      title,
+                                     jobTitle,
+                                     memberImage,
+                                     tags,
                                      helmet,
                                  }) => {
     const PostContent = contentComponent || Content;
 
     return (
         <section className="">
-            {helmet || ""}
-            <div className="">
-                <h1 className="">{title}</h1>
-                <p>{jobTitle}</p>
-                <PostContent content={content}/>
-                {tags && tags.length ? (
-                    <div className="mt-4">
-                        <h4>Tags</h4>
-                        <ul className="">
-                            {tags.map((tag) => (
-                                <li key={tag + `tag`}>
-                                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                                </li>
-                            ))}
-                        </ul>
+            <section className="px-2 sm:px-4">
+                <div className="container max-w-6xl mx-auto">
+
+                    {helmet || ""}
+
+                    <div className="">
+
+                        <div className="info-for-front-side-of-card">
+                            <PreviewCompatibleImage
+                                imageInfo={{
+                                    image: memberImage,
+                                    alt: `featured image thumbnail for team member ${title}`,
+                                    width:
+                                    memberImage.childImageSharp
+                                        .gatsbyImageData.width,
+                                    height:
+                                    memberImage.childImageSharp
+                                        .gatsbyImageData.height,
+                                }}
+                            />
+                            <h1 className="">{title}</h1>
+                            <p>{jobTitle}</p>
+                        </div>
+
+                        <div className="info-for-flip-side-of-card">
+                            <PostContent content={content}/>
+                        </div>
+
+                        {tags && tags.length ? (
+                            <div className="mt-4">
+                                <h4>Tags</h4>
+                                <ul className="">
+                                    {tags.map((tag) => (
+                                        <li key={tag + `tag`}>
+                                            <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ) : null}
                     </div>
-                ) : null}
-            </div>
+
+                </div>
+            </section>
         </section>
     );
 };
@@ -69,6 +97,8 @@ const TeamMember = ({data}) => {
                 }
                 tags={teamMember.frontmatter.tags}
                 title={teamMember.frontmatter.title}
+                jobTitle={teamMember.frontmatter.jobTitle}
+                memberImage={teamMember.frontmatter.memberImage}
             />
         </Layout>
     );
@@ -90,6 +120,15 @@ export const pageQuery = graphql`
       frontmatter {
         title
         jobTitle
+        memberImage {
+            childImageSharp {
+              gatsbyImageData(
+                width: 120
+                quality: 100
+                layout: CONSTRAINED
+              )
+            }
+        }
         tags
       }
     }

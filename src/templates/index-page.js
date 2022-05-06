@@ -25,16 +25,23 @@ export const IndexPageTemplate = ({
     return (
         <div>
             <FullWidthImage img={heroImage} title={title} subheading={subheading}/>
-            <TeamRoll/>
-            <h1 className="">{mainpitch.title}</h1>
-            <h3 className="">{mainpitch.description}</h3>
-            <h3 className="">{heading}</h3>
-            <p>{description}</p>
-            <Features gridItems={intro.blurbs}/>
-            <Link className="" to="/products">See all products</Link>
-            <h3 className="">Latest stories</h3>
-            <BlogRoll/>
-            <Link className="" to="/blog">Read more</Link>
+
+            <section className="px-2 sm:px-4">
+                <div className="container max-w-6xl mx-auto">
+
+                    <TeamRoll/>
+                    <h1 className="">{mainpitch.title}</h1>
+                    <h3 className="">{mainpitch.description}</h3>
+                    <h3 className="">{heading}</h3>
+                    <p>{description}</p>
+                    <Features gridItems={intro.blurbs}/>
+                    <Link className="" to="/products">See all products</Link>
+                    <h3 className="">Latest stories</h3>
+                    <BlogRoll/>
+                    <Link className="" to="/blog">Read more</Link>
+
+                </div>
+            </section>
         </div>
     );
 };
