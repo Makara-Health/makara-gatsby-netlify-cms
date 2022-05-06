@@ -76,6 +76,7 @@ export default function TeamRoll() {
                 frontmatter {
                   title
                   templateKey
+                  date(formatString: "MMMM DD, YYYY")
                   memberImage {
                     childImageSharp {
                       gatsbyImageData(
@@ -83,7 +84,6 @@ export default function TeamRoll() {
                         quality: 100
                         layout: CONSTRAINED
                       )
-
                     }
                   }
                 }
