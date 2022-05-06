@@ -22,7 +22,7 @@ export default class TeamIndexPage extends React.Component {
                             padding: "1rem",
                         }}
                     >
-                        Latest Stories
+                        Meet the Team
                     </h1>
                 </div>
                 <section className="section">
