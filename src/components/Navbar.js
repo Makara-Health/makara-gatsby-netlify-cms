@@ -54,23 +54,23 @@ const Navbar = class extends React.Component {
                         </div>
                     </div>
                     <div id="navMenu" className={`md:ml-auto flex flex-wrap items-center text-base justify-center ${this.state.navBarActiveClass}`}>
-                        <div className="navbar-start">
-                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/about">
+                        <div className="navbar-start montserrat">
+                            <Link className="navbar-item mr-12 text-white font-semibold hover:text-turquoise" to="/about">
                                 About us
                             </Link>
-                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/team">
+                            <Link className="navbar-item mr-12 text-white font-semibold hover:text-turquoise" to="/team">
                                 Our team
                             </Link>
-                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/work">
+                            <Link className="navbar-item mr-12 text-white font-semibold hover:text-turquoise" to="/work">
                                 Our work
                             </Link>
-                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/blog">
+                            <Link className="navbar-item mr-12 text-white font-semibold hover:text-turquoise" to="/blog">
                                 Our blog
                             </Link>
-                            <Link className="navbar-item mr-12 text-white hover:text-turquoise" to="/careers">
+                            <Link className="navbar-item mr-12 text-white font-semibold hover:text-turquoise" to="/careers">
                                 Careers
                             </Link>
-                            <Link className="navbar-item text-white hover:text-turquoise" to="/contact/examples">
+                            <Link className="navbar-item text-white font-semibold hover:text-turquoise" to="/contact/examples">
                                 Contact
                             </Link>
                         </div>

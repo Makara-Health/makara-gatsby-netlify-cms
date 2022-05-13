@@ -1,5 +1,26 @@
 @tailwind base;
 
+@layer base {
+    body {
+
+    }
+    h1, h2, h3, h4, h5, h6, .montserrat {
+        font-family: 'Montserrat Alternates', sans-serif;
+    }
+    h1 {
+        @apply font-semibold text-lightblue text-5xl tracking-tight;
+    }
+    h2 {
+        @apply text-xl;
+    }
+}
+
 @tailwind components;
 
 @tailwind utilities;
+
+.grid-item { width: 25%; }
+
+button[data-state='active'] {
+    @apply bg-blue text-white
+}

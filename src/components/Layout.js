@@ -15,6 +15,10 @@ const TemplateWrapper = ({ children }) => {
         <title>{title}</title>
         <meta name="description" content={description} />
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600&display=swap" rel="stylesheet" />
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -47,10 +51,16 @@ const TemplateWrapper = ({ children }) => {
           property="og:image"
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
+
+        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+                integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossOrigin="anonymous"></script>
       </Helmet>
-      <Navbar />
-      <div className="">{children}</div>
-      <Footer />
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <div className="flex-1">{children}</div>
+        <Footer />
+      </div>
     </div>
   );
 };

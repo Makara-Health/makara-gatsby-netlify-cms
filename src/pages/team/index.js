@@ -10,8 +10,8 @@ export default class TeamIndexPage extends React.Component {
                 <section className="px-2 sm:px-4">
                     <div className="container max-w-6xl mx-auto">
 
-                        <div className="p-10" style={{ backgroundImage: `url('/img/team-index.jpg')` }}>
-                            <h1>Meet the Team</h1>
+                        <div className="py-10">
+                            <h1>Our team</h1>
                         </div>
 
                         <TeamRoll />
