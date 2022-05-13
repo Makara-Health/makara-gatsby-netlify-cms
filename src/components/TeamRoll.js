@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Link, graphql, StaticQuery, withPrefix} from 'gatsby'
+import {graphql, StaticQuery, withPrefix} from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import Shuffle from 'shufflejs';
 
@@ -145,6 +145,12 @@ class TeamRollTemplate extends React.Component {
         const {edges: teamMembers} = data.allMarkdownRemark
         const { department } = this.state;
 
+        const formatTags = (tags) => {
+            return tags.map(tag => {
+                return `"${tag}"`
+            }).toString();
+        }
+        
         return (
                 <div className="">
                     <div>
@@ -160,7 +166,7 @@ class TeamRollTemplate extends React.Component {
                     <div className="container mt-8">
                         <div ref={this.element} className="my-shuffle">
                             {teamMembers && teamMembers.map(({node: teamMember}) => (
-                                <div key={teamMember.id} className="photo-item w-1/4" data-groups={'["all"]'}>
+                                <div key={teamMember.id} className="photo-item w-1/4" data-groups={"["+formatTags(teamMember.frontmatter.tags)+"]"}>
                                     <div className="grayscale">
                                         <PreviewCompatibleImage
                                             imageInfo={{
@@ -169,7 +175,7 @@ class TeamRollTemplate extends React.Component {
                                             }}
                                         />
                                     </div>
-                                    <p className="mt-2"><strong>{teamMember.frontmatter.title}</strong></p>
+                                    <p className="mt-2"><strong>{teamMember.frontmatter.title.split(" ")[0]}</strong></p>
                                     <p className="mb-2">{teamMember.frontmatter.jobTitle}</p>
                                     {/*<p>{teamMember.excerpt}</p>*/}
                                 </div>
@@ -212,13 +218,15 @@ export default function TeamRoll() {
                      title
                      templateKey
                      jobTitle
+                     tags
                      date(formatString: "MMMM DD, YYYY")
                      memberImage {
                        childImageSharp {
                          gatsbyImageData(
                            width: 400
-                           quality: 80
+                           quality: 70
                            aspectRatio: 1
+                           placeholder: BLURRED
                          )
                        }
                      }
