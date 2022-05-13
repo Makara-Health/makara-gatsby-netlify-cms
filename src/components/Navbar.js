@@ -33,8 +33,8 @@ const Navbar = class extends React.Component {
 
     render() {
         return (
-            <nav className="bg-blue px-2 sm:px-4 py-5" role="navigation" aria-label="main-navigation">
-                <div className="container max-w-6xl flex flex-wrap justify-between items-center mx-auto">
+            <nav className={"bg-blue px-2 sm:px-4 md:px-5 lg:px-6 py-5"} role="navigation" aria-label="main-navigation">
+                <div className={"container max-w-6xl flex flex-wrap justify-between items-center mx-auto"}>
                     <div className="navbar-brand">
                         <Link to="/" className="navbar-item" title="Logo">
                             <img src={logo} alt="Makara" style={{width: "155px"}}/>

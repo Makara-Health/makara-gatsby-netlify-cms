@@ -17,7 +17,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require("tailwindcss")],
+        postCssPlugins: [
+          require("tailwindcss")('./tailwind.config.js'),
+          require("autoprefixer")
+        ],
       },
     },
     // highlight-start
