@@ -101,8 +101,7 @@ class TeamRollTemplate extends React.Component {
         // The elements are in the DOM, initialize a shuffle instance.
         this.shuffle = new Shuffle(this.element.current, {
             itemSelector: '.photo-item',
-            sizer: '.photo-grid__sizer',
-            gutterWidth: 20
+            /*sizer: this.sizer.current,*/
         });
 
         setTimeout(function(){
@@ -150,7 +149,7 @@ class TeamRollTemplate extends React.Component {
                 return `"${tag}"`
             }).toString();
         }
-        
+
         return (
                 <div className="">
                     <div>
@@ -167,7 +166,7 @@ class TeamRollTemplate extends React.Component {
                         <div ref={this.element} className="my-shuffle">
                             {teamMembers && teamMembers.map(({node: teamMember}) => (
                                 <div key={teamMember.id} className="photo-item w-1/4" data-groups={"["+formatTags(teamMember.frontmatter.tags)+"]"}>
-                                    <div className="grayscale">
+                                    <div className="grayscale mr-4">
                                         <PreviewCompatibleImage
                                             imageInfo={{
                                                 image: teamMember.frontmatter.memberImage,
@@ -180,7 +179,7 @@ class TeamRollTemplate extends React.Component {
                                     {/*<p>{teamMember.excerpt}</p>*/}
                                 </div>
                             ))}
-                            <div ref={this.sizer} className="w-1/4 photo-grid__sizer"/>
+                            <div ref={this.sizer} className="w-1/6 mr-2 photo-grid__sizer"/>
                         </div>
                     </div>
 

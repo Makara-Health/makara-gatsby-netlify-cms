@@ -52,9 +52,6 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
 
-        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
-                integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossOrigin="anonymous"></script>
       </Helmet>
       <div className="min-h-screen flex flex-col">
         <Navbar />

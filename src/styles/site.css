@@ -21,6 +21,6 @@
 
 .grid-item { width: 25%; }
 
-button[data-state='active'] {
+button[data-state="active"] {
     @apply bg-blue text-white
 }
